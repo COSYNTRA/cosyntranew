@@ -2781,14 +2781,14 @@ section,
   justify-content: space-between;
 } */
 
-.industry-card {
-  background:var(--accent-gradient-hover); /* Semi-transparent accent color (replace with your RGBA if different) */
+/* .industry-card {
+  background:var(--accent-gradient-hover);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 92, 147, 0.3);
   border-radius: 12px;
   padding: 15px 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Optional deeper shadow for depth */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease;
 
   width: 180px;
@@ -2807,13 +2807,74 @@ section,
   max-height: 90px;
   margin-bottom: 10px;
   object-fit: contain;
-}
+} */
 /* .industry-label {
   font-size: 14px;
   font-weight: 500;
   color: #88a420;
 }  */
 
+/* Base styles (for larger screens or as a default) */
+.industry-card {
+  background: var(--accent-gradient-hover); /* Semi-transparent accent color (replace with your RGBA if different) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border: 1px solid rgba(255, 92, 147, 0.3); */
+  border-radius: 12px;
+  padding: 15px 10px;
+  /* Optional deeper shadow for depth */
+  transition: transform 0.3s ease;
+
+  width: 180px; /* Default width */
+  height: 100px; /* Default height */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.industry-card:hover {
+  transform: translateY(-5px);
+}
+
+.industry-card img {
+  max-height: 90px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .industry-card {
+    background: var(--background-color);
+    width: 140px; /* Adjust width for smaller screens */
+    height: 90px; /* Adjust height */
+    padding: 10px 8px; /* Slightly less padding */
+    /* You might want to adjust font sizes of text within the card here too if applicable */
+  }
+
+  .industry-card img {
+    max-height: 70px; /* Adjust image size for smaller cards */
+    margin-bottom: 5px; /* Less margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .industry-card {
+    background: var(--background-color);
+    width: 100%; /* Make card take full width for very small screens */
+    max-width: 200px; /* Optional: set a max-width to prevent it from becoming too wide on slightly larger phones */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 15px; /* More generous padding when full-width */
+    margin-bottom: 15px; /* Add some spacing between cards if they stack */
+  }
+
+  .industry-card img {
+    max-height: 80px; /* Re-adjust image size if full-width */
+    margin-bottom: 10px;
+  }
+}
 
 /*--------------------------------------------------------------
 # Faq Section
