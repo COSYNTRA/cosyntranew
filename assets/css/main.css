@@ -649,12 +649,26 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
 }
+ */
 
+@media screen and (max-width: 768px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  [data-aos][data-aos-delay],
+  [data-aos][data-aos-duration] {
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
